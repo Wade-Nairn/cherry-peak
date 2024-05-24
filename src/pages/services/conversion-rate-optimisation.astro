@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="Conversion Rate Opitimistation">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Conversion Rate Opitimistation</Fragment>
+      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <!-- <h2 class="font-bold text-3xl text-gray-800">
+        Empowering the world with Astro.
+      </h2> -->
+      <p class="text-lg leading-relaxed text-slate-500">
+        Today’s competitive online market is not just about attracting traffic to your website.
+        The real measure of success lies in turning those visitors into customers. That's
+        where Conversion Rate Optimisation (CRO) comes into play. Our digital marketing
+        agency specialises in crafting CRO strategies to target your ideal audience
+        effectively rather than just aiming for clicks.
+        </p><p class="text-lg leading-relaxed text-slate-500">
+        If you're seeing lots of clicks but not enough conversions, understanding why is
+        crucial. A thorough CRO audit helps identify barriers to conversion and uncovers
+        new growth opportunities. Imagine doubling, tripling, or multiplying your leads without
+        increasing your digital advertising budget. That's the potential of CRO.
+      </p><p class="text-lg leading-relaxed text-slate-500">
+        At Cherry Peak Creative, we offer personalised, data-driven CRO strategies that
+        align with your business objectives. We can provide detailed insights into user
+        behaviour through Google Analytics and offer recommendations to enhance your
+        website content and marketing efforts. It's not just about attracting visitors; we will
+        guide you on converting that interest into actual sales using our proven CRO
+        techniques, ensuring the best return on your investment.
+      </p>
+    </div>
+  
+  </Container>
+</Layout>

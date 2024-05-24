@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="Social Media Marketing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Social Media Marketing</Fragment>
+      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <!-- <h2 class="font-bold text-3xl text-gray-800">
+        Empowering the world with Astro.
+      </h2> -->
+      <p class="text-lg leading-relaxed text-slate-500">
+        Social media marketing is a powerful tool that allows you to promote your products
+        or services on platforms like Facebook, Instagram, TikTok, and LinkedIn. Its
+        effectiveness lies in its precision, as it enables advertisers to aim their message at
+        specific groups. Users willingly share details like age, gender, interests, and location,
+        which helps tailor ads to them. This precision reduces guesswork, boosting
+        conversions and cutting costs, and gives you the confidence that your advertising
+        strategy is on point.
+        </p><p class="text-lg leading-relaxed text-slate-500">
+        Creating ads that resonate with your target audience is crucial. Instagram and TikTok
+        attract younger users, while Facebook skews older, and LinkedIn caters to
+        professionals. Knowing each platform's strengths helps tailor your content strategy,
+        turning clicks into customers.
+      </p><p class="text-lg leading-relaxed text-slate-500">
+        Social media's targeted approach can rapidly improve your marketing efforts. It is
+        also flexible, offering various ad formats to suit diverse audiences. Whether selecting
+        the right platform or managing your budget, Cherry Peak Creative can help ensure
+        your ads hit the right audience every time.
+      </p><p class="text-lg leading-relaxed text-slate-500">
+        Contact us today to explore how our expertise in social media marketing can
+        enhance your business.
+      </p>
+    </div>
+  
+  </Container>
+</Layout>

@@ -1,0 +1,48 @@
+---
+import Contactform from "@components/contactform.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Contact Us">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Contact Us</Fragment>
+      <Fragment slot="desc">At Cherry Peak Creative, we are dedicated to pushing boundaries and exceeding
+        expectations. We're not just about delivering solutions. We are about crafting experiences that
+        resonate with your audience and drive tangible results for your business.</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <!-- <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2> -->
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+          If you’re ready to take your brand to new heights, we are here to help. Whether you have
+          questions or ideas and are ready to excel in your digital performance, contact us today!
+          </p><p class="text-lg leading-relaxed text-slate-500 mt-3">
+          Contact Us for a complimentary no cost consultation.
+        </p>
+        <!-- <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+            <span>1734 Sanfransico, CA 93063</span>
+          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
+              href="mailto:hello@astroshipstarter.com"
+              >hello@astroshipstarter.com</a
+            >
+          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
+              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
+            >
+          </div>
+        </div> -->
+      </div>
+      <div>
+        <Contactform />
+      </div>
+    </div>
+  </Container>
+</Layout>

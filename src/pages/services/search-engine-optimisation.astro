@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="Search Engine Optimisation">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Search Engine Optimisation</Fragment>
+      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <!-- <h2 class="font-bold text-3xl text-gray-800">
+        Empowering the world with Astro.
+      </h2> -->
+      <p class="text-lg leading-relaxed text-slate-500">
+        An SEO campaign aims to demonstrate to search engines that your website is the
+        most relevant for specific phrases or keywords your target audience is searching for.
+        The better your website, the higher it will rank in search results. Securing a place on
+        Google's first page gives you a competitive advantage and ensures your business
+        reaches the right audience.
+        </p><p class="text-lg leading-relaxed text-slate-500">
+        The SEO process begins by identifying the most suitable keywords for your business
+        and then optimising your website's content accordingly. However, SEO goes beyond
+        simply using keywords repeatedly. Effective strategies consider various SEO ranking
+        factors, including off-page signals like backlinks, local SEO, and your website's
+        technical performance.
+      </p><p class="text-lg leading-relaxed text-slate-500">
+        Our team offers tailored SEO services to help you capitalise on organic traffic from
+        Google search results. We will discuss your business goals and SEO objectives to
+        devise personalised strategies. Regarding search engine marketing, SEO stands out
+        for its long-term effectiveness and endurance. Partnering with a Brisbane SEO
+        specialist from Cherry Peak Creative ensures a steady stream of leads without
+        paying for each click.
+      </p>
+    </div>
+  
+  </Container>
+</Layout>

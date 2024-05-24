@@ -1,0 +1,21 @@
+---
+import Link from "./ui/link.astro";
+
+const { 
+  href = "#",
+  link = "Get Started"
+  } = Astro.props;
+---
+
+<div
+  class="bg-carmine p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+  <h2 class="text-white text-4xl md:text-6xl tracking-tight">
+    <slot name="title">Title</slot>
+  </h2>
+  <p class="text-white mt-4 text-lg md:text-xl">
+    <slot name="description">Title</slot>
+  </p>
+  <div class="flex mt-5">
+    <Link href={href} style="outline">{link}</Link>
+  </div>
+</div>

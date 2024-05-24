@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="About Us">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About Us</Fragment>
+      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <!-- <h2 class="font-bold text-3xl text-gray-800">
+        Empowering the world with Astro.
+      </h2> -->
+      <p class="text-lg leading-relaxed text-slate-500">
+        At Cherry Peak Creative, we are more than just a marketing and media agency—we are
+        dedicated partners on your journey to success. Our mission is simple yet profound: to
+        empower our clients to reach unprecedented heights in their industries through innovative
+        marketing solutions. We are committed to staying ahead of the curve, blending our creativity
+        with technical expertise to deliver results that meet and exceed your expectations.
+        </p><p class="text-lg leading-relaxed text-slate-500">
+        We strive to create strong, transparent relationships with our clients. We believe in the power
+        of mutual trust and shared success, working hand in hand to achieve remarkable outcomes.
+        Upholding the highest standards of integrity and professionalism, we celebrate diversity and
+        champion sustainable business practices. Our commitment to transparency and trust ensures
+        that you can have full confidence in our partnership.
+      </p><p class="text-lg leading-relaxed text-slate-500">
+        As a dynamic force in the marketing landscape both in Australia and the UK, we aspire to be
+        a frontrunner in excellence and leadership. Each project we undertake is infused with
+        positivity and enthusiasm—the 'cherry on top' that sets us apart. Let's embark on a journey of
+        growth, innovation, and unparalleled success together. Contact us today to discuss strategies
+        such as Google Ad, Creative Content, social media, and Programmatic marketing.
+      </p>
+    </div>
+    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      {
+        publishedTeamMembers.map((teamMemberEntry) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={teamMemberEntry.data.avatar.src}
+                alt={teamMemberEntry.data.avatar.alt}
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
+              <h3 class="text-sm text-slate-500">
+                {teamMemberEntry.data.title}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div> -->
+  </Container>
+</Layout>
