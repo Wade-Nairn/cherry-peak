@@ -8,17 +8,11 @@ const {
 ---
 
 <div
-  class="bg-carmine my-10 p-8 md:px-20 md:py-10 mx-auto max-w-4xl w-full rounded-lg flex justify-between items-center">
+  class="bg-carmine my-10 p-8 lg:px-20 lg:py-10 mx-auto max-w-4xl w-full rounded-lg flex flex-col lg:flex-row justify-between items-center">
   <p class="text-white text-lg md:text-xl">
     <slot name="text">Text needed</slot>
   </p>
-  <div class="flex">
+  <div class="flex mt-4 lg:mt-0">
     <Link href={href} style="outline">{link}</Link>
   </div>
 </div>
-
-<style>
-  p {
-    max-width: 70%;
-  }
-</style>
