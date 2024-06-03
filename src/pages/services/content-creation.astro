@@ -4,7 +4,7 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-
+import Cta from "@components/cta.astro";
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
@@ -12,30 +12,26 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="Content Creation">
+  <Sectionhead>
+    <Fragment slot="title">Content Creation</Fragment>
+  </Sectionhead>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">Content Creation</Fragment>
-      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
-    </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <!-- <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
-      </h2> -->
-      <p class="text-lg leading-relaxed text-slate-500">
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl">
+      <p class="text-lg leading-relaxed text-slate-500 pb-4">
         At Cherry Peak Creative, we specialise in creating dynamic content marketing
         strategies tailored to elevate your brand's digital presence and drive results. As a
-        leading marketing and media agency based in Brisbane, we understand the power of
+        leading marketing and media agency, we understand the power of
         compelling content in attracting new customers, increasing leads, and maximising
         conversions.
-        </p><p class="text-lg leading-relaxed text-slate-500">
+        </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         Content creation is vital to a successful digital marketing strategy. It catalyses
         engaging your audience, SEO efforts, and breathing life into stationary brands. Our
         team of content creation marketing experts is dedicated to developing personalised
         content strategies that deliver measurable outcomes. We can create content that
         captivates your target audience, ensuring your brand stands out amidst the digital
         noise.
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         Effective content marketing goes beyond mere promotion; it's a strategic approach to
         achieving your business objectives. By meticulously planning, creating, and
         distributing relevant content, you can attract and retain your ideal audience while
@@ -44,15 +40,21 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         clutter, make a lasting impression, and drive meaningful engagement. Well-crafted
         content informs and entertains, providing your brand with unparalleled exposure and
         access to potential customers.
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         At Cherry Peak Creative, we are dedicated to crafting comprehensive content
         strategies that show tangible results and help you achieve your marketing objectives
         with precision. 
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         The possibilities are endless, from blog posts and social media campaigns to video
         content and email newsletters. Let us customise a strategy tailored to your unique
         needs and goals, guiding you towards sustainable growth and success.
       </p>
+
+      <Cta href="/contact-us" link="Contact Us" >
+        <Fragment slot="text">Contact us today to explore how our expertise in Content Creation can
+          enhance your business.</Fragment>
+      </Cta>
+      
     </div>
   
   </Container>

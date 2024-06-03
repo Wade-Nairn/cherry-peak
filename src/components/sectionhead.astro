@@ -2,11 +2,17 @@
 const { align = "center" } = Astro.props;
 ---
 
-<div class:list={["mt-16", align === "center" && "text-center"]}>
-  <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    <slot name="title">Title</slot>
-  </h1>
-  <p class="text-lg mt-4 text-slate-600">
-    <slot name="desc">Some description goes here</slot>
-  </p>
+<div class:list={["sectionhead", "pt-16", "pb-8", "bg-melon", "mb-16"]}>
+  <div class="uppercase text-4xl lg:text-5xl font-bold lg:tracking-tight max-w-4xl mx-auto text-gunmetal">
+    <h1><slot name="title">Title</slot></h1>
+  </div>
 </div>
+
+<style>
+  .sectionhead {
+background-image: linear-gradient(110deg, #F9B29B 70%, #961B1E calc(70% + 2px))
+  }
+  h1 {
+    max-width: 60%;
+  }
+</style>

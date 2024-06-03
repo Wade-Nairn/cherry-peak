@@ -13,17 +13,17 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="Google Ads">
+  <Sectionhead>
+    <Fragment slot="title">Google Ads</Fragment>
+  </Sectionhead>
+
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">Google Ads</Fragment>
-      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
-    </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <!-- <h2 class="font-bold text-3xl text-gray-800">
         Empowering the world with Astro.
       </h2> -->
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="text-lg leading-relaxed text-slate-500 pb-4">
         When you're in a rush to boost your website traffic and can't afford to wait for SEO to
         work its magic, Google Ads is your go-to solution. It's a convenient way to advertise
         your business directly online, attracting immediate attention, traffic, and potential
@@ -31,7 +31,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         triggered by specific keywords related to your business. The best part? You only pay
         when users click on your ad to visit your website or contact you, relieving you from
         the SEO waiting game.
-        </p><p class="text-lg leading-relaxed text-slate-500">
+        </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         With a dedicated Google Ads campaign, you can target your desired audience
         precisely, ensuring your ads are seen by the right people at the right time. You can
         control your spending by selecting keywords and setting a daily budget. Our Google
@@ -39,12 +39,12 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         campaign improves over time. Additionally, Google Remarketing helps you
         reconnect with visitors who previously visited your website but did not make a
         purchase.
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         Google Ads campaigns are quick, adaptable, and suitable for various advertising
         goals, including promoting seasonal products or services with limited availability.
         However, the cost per click can vary significantly, so it's crucial to have a high
         conversion rate on your website or landing page to make the campaign profitable. At
-        Cherry Peak Creative, we are the trusted PPC agency for Brisbane businesses. We
+        Cherry Peak Creative, we are the trusted PPC agency for businesses. We
         manage your Google Ads to maximise your return on investment. Our digital
         marketing experts continuously test and refine your ads to ensure optimal
         performance.
@@ -55,7 +55,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </p> -->
       <Cta href="/contact-us" link="Contact Us" >
         <!-- <Fragment slot="title">Get in Touch</Fragment> -->
-        <Fragment slot="description">Contact us today to discuss how we can assist you in ranking your brand higher by
+        <Fragment slot="text">Contact us today to discuss how we can assist you in ranking your brand higher by
           using Google Ads.</Fragment>
       </Cta>
     </div>

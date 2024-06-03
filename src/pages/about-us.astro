@@ -12,34 +12,32 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="About Us">
+  <Sectionhead>
+    <Fragment slot="title">About Us</Fragment>
+    <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
+  </Sectionhead>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">About Us</Fragment>
-      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
-    </Sectionhead>
-
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl">
       <!-- <h2 class="font-bold text-3xl text-gray-800">
         Empowering the world with Astro.
       </h2> -->
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="text-lg leading-relaxed text-slate-500 pb-4">
         At Cherry Peak Creative, we are more than just a marketing and media agency—we are
         dedicated partners on your journey to success. Our mission is simple yet profound: to
         empower our clients to reach unprecedented heights in their industries through innovative
         marketing solutions. We are committed to staying ahead of the curve, blending our creativity
         with technical expertise to deliver results that meet and exceed your expectations.
-        </p><p class="text-lg leading-relaxed text-slate-500">
+        </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         We strive to create strong, transparent relationships with our clients. We believe in the power
         of mutual trust and shared success, working hand in hand to achieve remarkable outcomes.
         Upholding the highest standards of integrity and professionalism, we celebrate diversity and
         champion sustainable business practices. Our commitment to transparency and trust ensures
         that you can have full confidence in our partnership.
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-8">
         As a dynamic force in the marketing landscape both in Australia and the UK, we aspire to be
         a frontrunner in excellence and leadership. Each project we undertake is infused with
         positivity and enthusiasm—the 'cherry on top' that sets us apart. Let's embark on a journey of
-        growth, innovation, and unparalleled success together. Contact us today to discuss strategies
-        such as Google Ad, Creative Content, social media, and Programmatic marketing.
+        growth, innovation, and unparalleled success together.
       </p>
     </div>
     <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">

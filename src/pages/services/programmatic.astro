@@ -4,7 +4,7 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-
+import Cta from "@components/cta.astro";
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
@@ -12,43 +12,45 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="Programmatic">
+  <Sectionhead>
+    <Fragment slot="title">Programmatic</Fragment>
+  </Sectionhead>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">Programmatic</Fragment>
-      <!-- <Fragment slot="desc">We are a small passionate team.</Fragment> -->
-    </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl">
       <!-- <h2 class="font-bold text-3xl text-gray-800">
         Empowering the world with Astro.
       </h2> -->
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="text-lg leading-relaxed text-slate-500 pb-4">
         In today’s competitive online digital world, programmatic marketing is fundamental for
         successful advertising strategies, yet it remains a mystery for many businesses. That’s where
         we come in.
-        </p><p class="text-lg leading-relaxed text-slate-500">
+        </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         At Cherry Peak Creative, we specialise in harnessing the potential of programmatic
         marketing to drive peak results for your business. But what exactly is programmatic
         marketing?
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         Programmatic marketing is a cutting-edge practice that uses automated bidding and
         placement platforms to buy and sell digital ad space in real time. This sophisticated approach
         enables businesses to make data-driven decisions on ad placements, leveraging hyper-specific
         consumer data such as age, location, career, and interests.
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         Imagine launching targeted and hyper-targeted ad campaigns, precisely reaching the audience
         most likely to engage with your brand. That’s the power of programmatic marketing. By
         analysing vast amounts of data, we can determine the optimal placement for your ads,
         ensuring maximum exposure and return on your investment.
-      </p><p class="text-lg leading-relaxed text-slate-500">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         One of programmatic marketing&#39;s main advantages is its versatility. Your ads can reach
         consumers across the internet, from popular platforms like Facebook to niche websites
         tailored to specific interests. Our approach is agile and adaptive, directing your campaign
         funds where they will have the most significant impact.
-      </p><p class="text-lg leading-relaxed text-slate-500">
-        Contact us today to discuss how our expertise in programmatic marketing can enhance your
-business
       </p>
+
+      <Cta href="/contact-us" link="Contact Us" >
+        <Fragment slot="text">Contact us today to discuss how our expertise in programmatic marketing can enhance your
+          business.</Fragment>
+      </Cta>
     </div>
   
   </Container>

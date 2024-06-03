@@ -3,6 +3,8 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Picture } from "astro:assets";
+import logoImage from "assets/CherryPeak-Secondary-Colour.png";
 
 const menuitems = [
   {
@@ -32,16 +34,26 @@ const menuitems = [
 ];
 ---
 
-<div class="px-8 fixed z-10 bg-white w-screen">
+<div class="px-8 fixed z-10 bg-white w-screen shadow">
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Cherry Peak Creative</span>
+        <a href="/" class="text-lg" >
+          <Picture
+          src={logoImage}
+          alt="Astronaut in the air"
+          widths={[100, 200, 300]}
+          height=60
+          sizes="(max-width: fit-content) 100vw, fit-content"
+          loading="eager"
+          format="avif"
+          style="max-height: 50px; max-width: fit-content;"
+        />
           
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <Link href="/contact-us" size="md" block>Contact Us</Link>
+          <MenuIcon class="w-4 h-4 text-gray-800 ml-8" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -75,9 +87,6 @@ const menuitems = [
             ))
           }
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="/contact-us" size="md" block>Book a Call</Link>
-        </div>
       </MenuItems>
     </Astronav>
     <div>
