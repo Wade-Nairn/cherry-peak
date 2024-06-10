@@ -5,6 +5,7 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import { Picture } from "astro:assets";
 import logoImage from "assets/CherryPeak-Secondary-Colour.svg";
+import { Icon } from "astro-icon/components";
 
 const menuitems = [
   {
@@ -34,7 +35,7 @@ const menuitems = [
 ];
 ---
 
-<div class="px-8 fixed z-10 bg-white w-screen shadow">
+<div class="px-8 fixed z-10 bg-pink w-screen shadow ">
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
@@ -43,11 +44,11 @@ const menuitems = [
           src={logoImage}
           alt="Astronaut in the air"
           widths={[100, 200, 300]}
-          height=60
+          height=80
           sizes="(max-width: fit-content) 100vw, fit-content"
           loading="eager"
           format="avif"
-          style="max-height: 50px; max-width: fit-content;"
+          style="max-height: 60px; max-width: fit-content;"
         />
           
         </a>
@@ -57,7 +58,7 @@ const menuitems = [
         </div>
       </div>
       <MenuItems class="hidden menu-items w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
+        <ul class="flex flex-col lg:flex-row lg:gap-3 lg:-ml-60">
           {
             menuitems.map((item, index) => (
               <>
@@ -90,24 +91,32 @@ const menuitems = [
       </MenuItems>
     </Astronav>
     <div>
-      <div class="hidden lg:flex items-center gap-4">
-        <Link href="/contact-us" size="md" block>Book a Call</Link>
+      <div class="cta hidden lg:flex items-center gap-4">
+        <Link href="https://calendly.com/naveed-cherrypeak/30min" target="_blank" size="md" class="cta flex items-center" block>
+          <Icon class="text-white w-5 h-5 mr-2" name="bx:phone" />
+          Book a call
+        </Link>
       </div>
     </div>
   </header>
 </div>
 
 <style>
+  .items {
+    /* margin-left: -100px; */
+  }
  .menu-items {
+  margin-right: -20px;
   span {
     color: #292F36;
     font-size: 1.4rem;
     font-weight: bold;
   }
-
-  a {
-    color: #292F36;
-    font-size: 1.2rem;
-  }
  }
+ .cta {
+    /* color: #292F36; */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+  }
 </style>

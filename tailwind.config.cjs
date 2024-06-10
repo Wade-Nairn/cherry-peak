@@ -18,6 +18,7 @@ module.exports = {
         melon: "#F9B29B",
         carmine: "#961B1E",
         green: "#00AF4C",
+        pink: "#FFDBD8",
         gunmetal: "#292F36"
       }
     },

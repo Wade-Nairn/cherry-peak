@@ -5,7 +5,6 @@ import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-https://calendly.com/naveed-cherrypeak/30min
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="py-6 md:order-1 hidden md:block">
@@ -26,7 +25,7 @@ https://calendly.com/naveed-cherrypeak/30min
     <p class="text-lg mt-4 text-gunmetal max-w-xl">
       Streamline Your Path To Success. Partner With Cherry Peak To Elevate Your Business.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <div class=" cta mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="#"
         href="https://calendly.com/naveed-cherrypeak/30min"
@@ -35,8 +34,15 @@ https://calendly.com/naveed-cherrypeak/30min
         rel="noopener">
         <Icon class="text-white w-5 h-5" name="bx:phone" />
 
-         Book a call.
+         Book a call
       </Link>
     </div>
   </div>
 </main>
+
+<style>
+  .cta {
+    font-weight: bold;
+        font-size: 1.2rem;
+  }
+</style>
