@@ -10,7 +10,7 @@ import Button from "./ui/button.astro";
   id="form"
   class="needs-validation"
   novalidate>
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+  <input type="hidden" name="access_key" value="58b7424a-22f3-437a-aea9-56ac921722a7" />
   <!-- Create your free access key from https://web3forms.com/ -->
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
@@ -23,6 +23,22 @@ import Button from "./ui/button.astro";
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
       Please provide your full name.
+    </div>
+  </div>
+  <div class="mb-5">
+    <label for="phone_number" class="sr-only">Phone Number</label><input
+      id="phone_number"
+      type="text"
+      placeholder="Phone Number"
+      name="phone_number"
+      required
+      class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+    />
+    <div class="empty-feedback text-red-400 text-sm mt-1">
+      Please provide your phone number.
+    </div>
+    <div class="invalid-feedback text-red-400 text-sm mt-1">
+      Please provide a valid phone number.
     </div>
   </div>
   <div class="mb-5">

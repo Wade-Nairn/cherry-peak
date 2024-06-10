@@ -5,6 +5,16 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
+import facebook from "assets/platforms/facebook.svg";
+import google from "assets/platforms/google_ads.svg";
+import insta from "assets/platforms/instagram.svg";
+import linkedin from "assets/platforms/linkedin.svg";
+import shopify from "assets/platforms/shopify.svg";
+import tiktok from "assets/platforms/tiktok.svg";
+import youtube from "assets/platforms/youtube.svg";
+
+const logos = [facebook, google, insta, linkedin, shopify, tiktok, youtube]
+
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
@@ -33,7 +43,25 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         Upholding the highest standards of integrity and professionalism, we celebrate diversity and
         champion sustainable business practices. Our commitment to transparency and trust ensures
         that you can have full confidence in our partnership.
-      </p><p class="text-lg leading-relaxed text-slate-500 py-8">
+      </p><p class="text-lg leading-relaxed text-slate-500 py-4">
+        Connecting your business with custom solutions:
+      </p>
+        <div class="logo-grid">
+          {logos.map((l) => {
+            <div class="logo">
+                <Picture
+                  src={l}
+                  alt="Astronaut in the air"
+                  widths={[100, 200, 300]}
+                  sizes="(max-width: fit-content) 100vw, fit-content"
+                  loading="eager"
+                  format="avif"
+                  style="max-height: 50px; max-width: fit-content;"
+                />
+            </div>
+          })}
+        </div>
+      <p class="text-lg leading-relaxed text-slate-500 pb-8">
         As a dynamic force in the marketing landscape both in Australia and the UK, we aspire to be
         a frontrunner in excellence and leadership. Each project we undertake is infused with
         positivity and enthusiasm—the 'cherry on top' that sets us apart. Let's embark on a journey of
