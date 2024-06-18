@@ -33,8 +33,15 @@ const makeTitle = title
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-6S7WV2717M"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+      gtag('config', 'G-6S7WV2717M');
+    </script>
     <SEO
       title={makeTitle}
       description="Cherry Peak Creative delivers straightforward digital marketing strategies to make you stand out while allowing you to then focus on managing your business."
@@ -47,7 +54,7 @@ const makeTitle = title
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Cherry Peak Homepage Screenshot",
         },
       }}
     />
