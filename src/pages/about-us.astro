@@ -46,20 +46,102 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </p><p class="text-lg leading-relaxed text-slate-500 py-4">
         Connecting your business with custom solutions:
       </p>
-        <div class="logo-grid">
-          {logos.map((l) => {
+        <div class="logo-grid-1">
+          <div class="logo">
+            <Picture
+              src={google}
+              alt="Astronaut in the air"
+             
+              
+              loading="eager"
+              format="png"
+              style="max-height: 80px; width: 100px;"
+            />
+        </div>
+        <div class="logo">
+          <Picture
+            src={insta}
+            alt="Astronaut in the air"
+           
+            
+            loading="eager"
+            format="png"
+            style="max-height: 80px; width: 100px;"
+          />
+      </div>
+      <div class="logo">
+        <Picture
+          src={tiktok}
+          alt="Astronaut in the air"
+         
+          
+          loading="eager"
+          format="png"
+          style="max-height: 80px; width: 100px;"
+        />
+    </div> 
+    </div>
+    <div class="logo-grid-2">
+          <!-- {logos.map((l) => { -->
             <div class="logo">
                 <Picture
-                  src={l}
+                  src={facebook}
                   alt="Astronaut in the air"
-                  widths={[100, 200, 300]}
-                  sizes="(max-width: fit-content) 100vw, fit-content"
+                 
+                  
                   loading="eager"
-                  format="avif"
-                  style="max-height: 50px; max-width: fit-content;"
+                  format="png"
+                  style="max-height: 120px; width: 150px;"
                 />
             </div>
-          })}
+
+          <div class="logo">
+            <Picture
+              src={linkedin}
+              alt="Astronaut in the air"
+             
+              
+              loading="eager"
+              format="png"
+              style="max-height: 120px; width: 150px;"
+            />
+        </div>
+
+      <div class="logo">
+        <Picture
+          src={shopify}
+          alt="Astronaut in the air"
+         
+          
+          loading="eager"
+          format="png"
+          style="max-height: 120px; width: 150px;"
+        />
+    </div>
+    <!-- <div class="logo">
+      <Picture
+        src={tiktok}
+        alt="Astronaut in the air"
+       
+        
+        loading="eager"
+        format="png"
+        style="max-height: 100px;"
+      />
+  </div>    -->
+         <div class="logo">
+    <Picture
+      src={youtube}
+      alt="Astronaut in the air"
+     
+      
+      loading="eager"
+      format="png"
+      style="max-height: 120px; width: 150px;"
+    />
+</div>
+
+          <!-- })} -->
         </div>
       <p class="text-lg leading-relaxed text-slate-500 pb-8">
         As a dynamic force in the marketing landscape both in Australia and the UK, we aspire to be
@@ -95,3 +177,22 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     </div> -->
   </Container>
 </Layout>
+
+<style>
+  .logo-grid-1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logo-grid-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .logo {
+    width: fit-content;
+    max-width: 300px;
+  }
+</style>
